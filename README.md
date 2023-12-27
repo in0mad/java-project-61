@@ -9,3 +9,4 @@ Enjoy!
 ## Setup
 
 ## Start
+Just execute "make run-dist"
