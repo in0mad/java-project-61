@@ -3,7 +3,7 @@
 
 #### About
 
-A small project calls Mind Games.
+A small project calls *Mind Games.*
 It's a set of 5 console games. You should answer to 3 questions to successfully finish the game.
 Enjoy!
 
@@ -12,7 +12,7 @@ Enjoy!
 ## Start
 
 ```bash
-make run-dist"
+make run-dist
 ```
 
 ## Maintainability
