@@ -22,11 +22,15 @@ public class Even {
                 rightAnswers++;
                 System.out.println("Correct!");
             } else if (randomNum % 2 == 0 && answer.equals("no")) {
-                System.out.println("'no' is a wrong answer ;(. Correct answer was 'yes'.");
+                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'yes'.", answer);
                 System.out.println("Let's try again, " + username);
                 break;
             } else if (randomNum % 2 != 0 && answer.equals("yes")) {
-                System.out.println("'yes' is a wrong answer ;(. Correct answer was 'no'.");
+                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.", answer);
+                System.out.println("Let's try again, " + username);
+                break;
+            } else {
+                System.out.println("Incorrect input. You should answer only 'yes' or 'no'.");
                 System.out.println("Let's try again, " + username);
                 break;
             }
