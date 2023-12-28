@@ -22,3 +22,7 @@ make run-dist
 ## The Multiple Runtime Version Manager *asdf*
 
 On *nix and macOS to manage Java versions we recommend using asdf https://github.com/asdf-vm/asdf.
+
+## An *Even* game demo
+
+https://asciinema.org/a/AiBWlHjyyhyL8ar4jxJgtXKzm
