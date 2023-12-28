@@ -17,7 +17,7 @@ public class Greet {
         Scanner scanner = new Scanner(System.in);
         String userName = scanner.next();
         System.out.printf("Hello, %s!\n", userName);
-        scanner.close();
+//        scanner.close();  #не понимаю, почему при открытии тут сканера, появляется ошибка при запуске аппы
         return userName;
     }
 }
