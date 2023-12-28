@@ -18,17 +18,14 @@ public class Even {
             if (randomNum % 2 == 0 && answer.equals("yes")) {
                 rightAnswers++;
                 System.out.println("Correct!");
-            }
-            else if (randomNum % 2 != 0 && answer.equals("no")) {
+            } else if (randomNum % 2 != 0 && answer.equals("no")) {
                 rightAnswers++;
                 System.out.println("Correct!");
-            }
-            else if (randomNum % 2 == 0 && answer.equals("no")) {
+            } else if (randomNum % 2 == 0 && answer.equals("no")) {
                 System.out.println("'no' is a wrong answer ;(. Correct answer was 'yes'.");
                 System.out.println("Let's try again, " + username);
                 break;
-            }
-            else if (randomNum % 2 != 0 && answer.equals("yes")) {
+            } else if (randomNum % 2 != 0 && answer.equals("yes")) {
                 System.out.println("'yes' is a wrong answer ;(. Correct answer was 'no'.");
                 System.out.println("Let's try again, " + username);
                 break;
@@ -46,8 +43,6 @@ public class Even {
     private static String getAnswer() {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
-//        String answer = scanner.next();
-//        scanner.close();  #не понимаю, почему при открытии тут сканера, появляется ошибка при запуске аппы
-//        return answer;
+
     }
 }

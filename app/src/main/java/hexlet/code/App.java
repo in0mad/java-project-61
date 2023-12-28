@@ -21,7 +21,7 @@ public class App {
             case 2:
                 Even.startTheGame();
                 break;
-            case 0:
+            default:
                 break;
         }
         sc.close();
