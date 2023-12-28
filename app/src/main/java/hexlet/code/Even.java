@@ -8,10 +8,9 @@ public class Even {
         String username = Greet.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int rightAnswers = 0;
-        int randomNum;
         String answer;
         for (int i = 0; i < 3; i++) {
-            randomNum = getRandomNumber();
+            int randomNum = getRandomNumber();
             System.out.println("Question " + randomNum);
             System.out.print("Your answer: ");
             answer = getAnswer();
@@ -22,11 +21,11 @@ public class Even {
                 rightAnswers++;
                 System.out.println("Correct!");
             } else if (randomNum % 2 == 0 && answer.equals("no")) {
-                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'yes'.", answer);
+                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'yes'.\n", answer);
                 System.out.println("Let's try again, " + username);
                 break;
             } else if (randomNum % 2 != 0 && answer.equals("yes")) {
-                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.", answer);
+                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.\n", answer);
                 System.out.println("Let's try again, " + username);
                 break;
             } else {
