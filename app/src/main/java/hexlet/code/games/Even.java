@@ -1,20 +1,19 @@
-package hexlet.code;
+package hexlet.code.games;
+
+import hexlet.code.Engine;
 
 public class Even {
     public static void startTheGame() {
-        String username = Interaction.getName();
+        String username = Engine.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int rightAnswers = 0;
         String answer;
         for (int i = 0; i < 3; i++) {
-            int randomNum = Rand.getRandomNumber();
+            int randomNum = Engine.getRandomNumber();
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
-            answer = Interaction.getTextAnswer();
-            if (randomNum % 2 == 0 && answer.equals("yes")) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else if (randomNum % 2 != 0 && answer.equals("no")) {
+            answer = Engine.getTextAnswer();
+            if (randomNum % 2 == 0 && answer.equals("yes") || randomNum % 2 != 0 && answer.equals("no")) {
                 rightAnswers++;
                 System.out.println("Correct!");
             } else if (randomNum % 2 == 0 && answer.equals("no")) {

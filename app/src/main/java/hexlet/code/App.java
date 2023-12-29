@@ -1,5 +1,8 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+
 import java.util.Scanner;
 
 public class App {
@@ -17,7 +20,7 @@ public class App {
         int gameChoose = sc.nextInt();
         switch (gameChoose) {
             case 1:
-                Interaction.sayHello();
+                Engine.sayHello();
                 break;
             case 2:
                 Even.startTheGame();

@@ -1,8 +1,9 @@
 package hexlet.code;
 
 import java.util.Scanner;
+import java.util.Random;
 
-public class Interaction {
+public class Engine {
     public static String getTextAnswer() {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
@@ -28,5 +29,30 @@ public class Interaction {
         String userName = scanner.next();
         System.out.printf("Hello, %s!\n", userName);
         return userName;
+    }
+    public static int getRandomNumber() {
+        java.util.Random randNum = new java.util.Random();
+        return randNum.nextInt(0, 100);
+    }
+    public static char getRandomOperator() {
+        // определение рандомного оператора
+        Random rand = new Random();
+        int operatorRandomizer = rand.nextInt(1, 4);
+        char operator = ' ';
+        // алгоритм рандомного оператора и подсчет результата
+        switch (operatorRandomizer) {
+            case 1:
+                operator = '-';
+                break;
+            case 2:
+                operator = '+';
+                break;
+            case 3:
+                operator = '*';
+                break;
+            default:
+                break;
+        }
+        return operator;
     }
 }
