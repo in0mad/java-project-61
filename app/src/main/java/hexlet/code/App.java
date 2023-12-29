@@ -8,6 +8,7 @@ public class App {
                 Please enter the game number and press Enter.
                 1 - Greet
                 2 - Even
+                3 - Calc
                 0 - Exit
                 """;
         System.out.println(gameMenu);
@@ -16,10 +17,13 @@ public class App {
         int gameChoose = sc.nextInt();
         switch (gameChoose) {
             case 1:
-                Greet.sayHello();
+                Interaction.sayHello();
                 break;
             case 2:
                 Even.startTheGame();
+                break;
+            case 3:
+                Calc.startTheGame();
                 break;
             default:
                 break;
