@@ -30,3 +30,7 @@ https://asciinema.org/a/AiBWlHjyyhyL8ar4jxJgtXKzm
 ## *Calc* game demo
 
 https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le
+
+## *GCD* game demo
+
+https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le

@@ -55,4 +55,12 @@ public class Engine {
         }
         return operator;
     }
+    public static void callFaultMessage (int answer, int correctAnswer, String username) {
+        System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, correctAnswer);
+        System.out.println("Let's try again, " + username + "!");
+    }
+    public static void callFaultMessage (String answer, String correctAnswer, String username) {
+        System.out.printf("'%s' is a wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
+        System.out.println("Let's try again, " + username + "!");
+    }
 }

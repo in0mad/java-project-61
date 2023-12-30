@@ -8,6 +8,7 @@ public class Even {
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int rightAnswers = 0;
         String answer;
+        String correctAnswer;
         for (int i = 0; i < 3; i++) {
             int randomNum = Engine.getRandomNumber();
             System.out.println("Question: " + randomNum);
@@ -17,12 +18,16 @@ public class Even {
                 rightAnswers++;
                 System.out.println("Correct!");
             } else if (randomNum % 2 == 0 && answer.equals("no")) {
-                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'yes'.\n", answer);
-                System.out.println("Let's try again, " + username + "!");
+                correctAnswer = "yes";
+                Engine.callFaultMessage(answer, correctAnswer, username);
+//                System.out.printf("'%s' is a wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
+//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else if (randomNum % 2 != 0 && answer.equals("yes")) {
-                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.\n", answer);
-                System.out.println("Let's try again, " + username + "!");
+                correctAnswer = "no";
+                Engine.callFaultMessage(answer, correctAnswer, username);
+//                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.\n", answer);
+//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else {
                 System.out.println("Incorrect input. You should answer only 'yes' or 'no'.");

@@ -29,16 +29,19 @@ public class Calc {
                 rightAnswers++;
                 System.out.println("Correct!");
             } else if (operator == '-' && randomNum1 - randomNum2 != answer) {
-                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
-                System.out.println("Let's try again, " + username + "!");
+                Engine.callFaultMessage(answer, arithmeticResult, username);
+//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
+//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else if (operator == '+' && randomNum1 + randomNum2 != answer) {
-                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
-                System.out.println("Let's try again, " + username + "!");
+                Engine.callFaultMessage(answer, arithmeticResult, username);
+//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
+//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else if (operator == '*' && randomNum1 * randomNum2 != answer) {
-                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
-                System.out.println("Let's try again, " + username + "!");
+                Engine.callFaultMessage(answer, arithmeticResult, username);
+//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, arithmeticResult);
+//                System.out.println("Let's try again, " + username + "!");
                 break;
             }
         }
