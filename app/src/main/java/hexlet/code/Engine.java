@@ -30,11 +30,11 @@ public class Engine {
         return userName;
     }
     public static int getRandomNumber() {
-        Random randNum = new java.util.Random();
+        Random randNum = new Random();
         return randNum.nextInt(0, 100);
     }
     public static int getRandomNumber(int start, int end) {
-        Random randNum = new java.util.Random();
+        Random randNum = new Random();
         return randNum.nextInt(start, end);
     }
 
