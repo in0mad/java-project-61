@@ -7,7 +7,7 @@ public class Progression {
         String username = Engine.getName();
         System.out.println("What number is missing in the progression?");
         int rightAnswers = 0;
-        int answer;
+        int answer;  // переменная - считыватель ответа пользователя
         StringBuilder textSequence;
         int missedNum = 0;
         // основная логика игры
