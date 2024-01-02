@@ -10,7 +10,6 @@ public class Engine {
     }
     public static int getIntAnswer() {
         Scanner scanner = new Scanner(System.in);
-
         return scanner.nextInt();
     }
 
@@ -39,7 +38,7 @@ public class Engine {
         Random rand = new Random();
         int operatorRandomizer = rand.nextInt(1, 4);
         char operator = ' ';
-        // алгоритм рандомного оператора и подсчет результата
+        // алгоритм рандомного оператора
         switch (operatorRandomizer) {
             case 1:
                 operator = '-';

@@ -9,10 +9,20 @@ Enjoy!
 
 ## Setup
 
+```bash
+тут по ходу надо установку зависимостей и включение нужной версии явы и градла"
+```
+
 ## Start
 
 ```bash
 make run-dist
+```
+
+## Run checkstyle
+
+```bash
+make lint
 ```
 
 ## Maintainability
@@ -32,5 +42,9 @@ https://asciinema.org/a/AiBWlHjyyhyL8ar4jxJgtXKzm
 https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le
 
 ## *GCD* game demo
+
+https://asciinema.org/a/WLfSPfuk34g041gOeUBxGRyK0
+
+## *Progression* game demo
 
 https://asciinema.org/a/WLfSPfuk34g041gOeUBxGRyK0

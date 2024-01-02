@@ -3,6 +3,7 @@ package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Even;
 import hexlet.code.games.Gcd;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class App {
                 2 - Even
                 3 - Calc
                 4 - GCD
+                5 - Progression
                 0 - Exit
                 """;
         System.out.println(gameMenu);
@@ -32,6 +34,9 @@ public class App {
                 break;
             case 4:
                 Gcd.startTheGame();
+                break;
+            case 5:
+                Progression.startTheGame();
                 break;
             default:
                 break;
