@@ -48,3 +48,7 @@ https://asciinema.org/a/WLfSPfuk34g041gOeUBxGRyK0
 ### *Progression* game demo
 
 https://asciinema.org/a/0WOykOXUdbR8vtNbYPpnYK32t
+
+### *Prime* game demo
+
+https://
