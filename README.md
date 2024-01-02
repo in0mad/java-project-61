@@ -33,18 +33,18 @@ make lint
 
 On *nix and macOS to manage Java versions we recommend using asdf https://github.com/asdf-vm/asdf.
 
-## *Even* game demo
+### *Even* game demo
 
 https://asciinema.org/a/AiBWlHjyyhyL8ar4jxJgtXKzm
 
-## *Calc* game demo
+### *Calc* game demo
 
 https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le
 
-## *GCD* game demo
+### *GCD* game demo
 
 https://asciinema.org/a/WLfSPfuk34g041gOeUBxGRyK0
 
-## *Progression* game demo
+### *Progression* game demo
 
 https://asciinema.org/a/0WOykOXUdbR8vtNbYPpnYK32t
