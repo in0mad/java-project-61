@@ -44,10 +44,10 @@ public class Engine {
         int sequenceLength = rand.nextInt(10, 16);
         int[] sequenceArr = new int[sequenceLength];
         // определение шага последовательности и стартового числа
-        int randStepPosition = rand.nextInt(2, 6);
+        int randStep = rand.nextInt(2, 6);
         int startNum = rand.nextInt(3, 88);
         // построение последовательности
-        for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStepPosition) {
+        for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStep) {
             sequenceArr[f] = j;
         }
         return sequenceArr;

@@ -8,23 +8,24 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         int rightAnswers = 0;
         int answer;
-        int[] sequence = Engine.getRandomSequence();
-        String textSequence = "";
+        StringBuilder textSequence;
         int missedNum = 0;
         // основная логика игры
         for (int i = 0; i < 3; i++) {
+            int[] sequence = Engine.getRandomSequence();
+            textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
-            int randNumPos = Engine.getRandomNumber(2, sequence.length);
+            int randNumPos = Engine.getRandomNumber(2, sequence.length + 1);
             for (int f = 0; f < sequence.length; f++) {
                 if (f == randNumPos - 1) {
-                    textSequence += " " + "..";
+                    textSequence.append(" " + "..");
                 } else {
-                    textSequence += " " + sequence[f];
+                    textSequence.append(" ").append(sequence[f]);
                 }
-                missedNum = randNumPos - 1;
+                missedNum = sequence[randNumPos - 1];
             }
             // взаимодействие с юзером
-            System.out.printf("Question: %s\n", textSequence);
+            System.out.printf("Question: %s\n", textSequence.toString());
             System.out.print("Your answer: ");
             answer = Engine.getIntAnswer();
             if (answer == missedNum) {
