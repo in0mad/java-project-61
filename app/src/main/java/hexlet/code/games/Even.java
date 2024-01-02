@@ -20,14 +20,10 @@ public class Even {
             } else if (randomNum % 2 == 0 && answer.equals("no")) {
                 correctAnswer = "yes";
                 Engine.callFaultMessage(answer, correctAnswer, username);
-//                System.out.printf("'%s' is a wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);
-//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else if (randomNum % 2 != 0 && answer.equals("yes")) {
                 correctAnswer = "no";
                 Engine.callFaultMessage(answer, correctAnswer, username);
-//                System.out.printf("'%s' is a wrong answer ;(. Correct answer was 'no'.\n", answer);
-//                System.out.println("Let's try again, " + username + "!");
                 break;
             } else {
                 System.out.println("Incorrect input. You should answer only 'yes' or 'no'.");

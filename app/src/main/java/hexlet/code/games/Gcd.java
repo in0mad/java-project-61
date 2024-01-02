@@ -13,34 +13,16 @@ public class Gcd {
             int randomNum1 = Engine.getRandomNumber();
             int randomNum2 = Engine.getRandomNumber();
             // делитель
-            int denominator = 0;
+            int denominator = findDenominator(randomNum1, randomNum2);
             // основная логика игры
             System.out.printf("Question: %d %d\n", randomNum1, randomNum2);
             System.out.print("Your answer: ");
             answer = Engine.getIntAnswer();
-            if (randomNum1 - randomNum2 == answer) {
+            if (answer == denominator) {
                 rightAnswers++;
                 System.out.println("Correct!");
-            } else if (randomNum1 + randomNum2 == answer) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else if (randomNum1 * randomNum2 == answer) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else if (randomNum1 - randomNum2 != answer) {
+            } else {
                 Engine.callFaultMessage(answer, denominator, username);
-//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, denominator);
-//                System.out.println("Let's try again, " + username + "!");
-                break;
-            } else if (randomNum1 + randomNum2 != answer) {
-                Engine.callFaultMessage(answer, denominator, username);
-//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, denominator);
-//                System.out.println("Let's try again, " + username + "!");
-                break;
-            } else if (randomNum1 * randomNum2 != answer) {
-                Engine.callFaultMessage(answer, denominator, username);
-//                System.out.printf("'%d' is a wrong answer ;(. Correct answer was '%d'.\n", answer, denominator);
-//                System.out.println("Let's try again, " + username + "!");
                 break;
             }
         }
@@ -50,6 +32,13 @@ public class Gcd {
     }
     public static int findDenominator(int num1, int num2) {
         int denominator = 0;
+        int minFigure = Math.min(num1, num2);
+        int maxFigure = Math.max(num1, num2);
+        for (int f = 1; f <= minFigure; f++) {
+            if (minFigure % f == 0 && maxFigure % f == 0) {
+                denominator = f;
+            }
+        }
         return denominator;
     }
 }
