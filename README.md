@@ -33,4 +33,4 @@ https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le
 
 ## *GCD* game demo
 
-https://asciinema.org/a/HM5PCPnCQdXTdzXxe2GQ3o1le
+https://asciinema.org/a/WLfSPfuk34g041gOeUBxGRyK0
