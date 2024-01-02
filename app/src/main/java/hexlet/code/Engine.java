@@ -30,8 +30,27 @@ public class Engine {
         return userName;
     }
     public static int getRandomNumber() {
-        java.util.Random randNum = new java.util.Random();
+        Random randNum = new java.util.Random();
         return randNum.nextInt(0, 100);
+    }
+    public static int getRandomNumber(int start, int end) {
+        Random randNum = new java.util.Random();
+        return randNum.nextInt(start, end);
+    }
+
+    public static int[] getRandomSequence() {
+        // установка рандомной длины прогрессии
+        Random rand = new Random();
+        int sequenceLength = rand.nextInt(10, 16);
+        int[] sequenceArr = new int[sequenceLength];
+        // определение шага последовательности и стартового числа
+        int randStepPosition = rand.nextInt(2, 6);
+        int startNum = rand.nextInt(3, 88);
+        // построение последовательности
+        for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStepPosition) {
+            sequenceArr[f] = j;
+        }
+        return sequenceArr;
     }
     public static char getRandomOperator() {
         // определение рандомного оператора
