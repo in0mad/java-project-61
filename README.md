@@ -51,4 +51,4 @@ https://asciinema.org/a/0WOykOXUdbR8vtNbYPpnYK32t
 
 ### *Prime* game demo
 
-https://
+https://asciinema.org/a/RtYeaok8PbQQp9QNXjAsxjR31
