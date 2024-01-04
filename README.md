@@ -2,9 +2,6 @@
 
 [![Actions Status](https://github.com/in0mad/java-project-61/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/in0mad/java-project-61/actions)
 
-### Test Coverage:
-
-[![Test Coverage](https://api.codeclimate.com/v1/badges/8b086596f00866944c2e/test_coverage)](https://codeclimate.com/github/in0mad/java-project-61/test_coverage)
 
 ## Maintainability
 
