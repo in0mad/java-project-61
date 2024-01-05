@@ -7,10 +7,9 @@ public class Even {
         String username = Engine.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         int rightAnswers = 0;
-        int roundCounter = 3;
         String answer;
         String correctAnswer;
-        for (int i = 0; i < roundCounter; i++) {
+        for (int i = 0; i < Engine.defineRoundCount(); i++) {
             int randomNum = Engine.getRandomNumber();
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
@@ -32,7 +31,7 @@ public class Even {
                 break;
             }
         }
-        if (rightAnswers == roundCounter) {
+        if (rightAnswers == Engine.defineRoundCount()) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

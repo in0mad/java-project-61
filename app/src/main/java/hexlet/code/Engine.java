@@ -4,6 +4,9 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Engine {
+    public static int defineRoundCount() {
+        return 3;
+    }
     public static String getTextAnswer() {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
@@ -31,7 +34,9 @@ public class Engine {
     }
     public static int getRandomNumber() {
         Random randNum = new Random();
-        return randNum.nextInt(0, 100);
+        int defaultStartNum = 0;
+        int defaultEndNum = 100;
+        return randNum.nextInt(defaultStartNum, defaultEndNum);
     }
     public static int getRandomNumber(int start, int end) {
         Random randNum = new Random();
@@ -47,11 +52,17 @@ public class Engine {
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии
         Random rand = new Random();
-        int sequenceLength = rand.nextInt(10, 16);
+        int defaultSequenceLengthStart = 10;
+        int defaultSequenceLengthEnd = 16;
+        int sequenceLength = rand.nextInt(defaultSequenceLengthStart, defaultSequenceLengthEnd);
         int[] sequenceArr = new int[sequenceLength];
         // определение шага последовательности и стартового числа
-        int randStep = rand.nextInt(2, 6);
-        int startNum = rand.nextInt(3, 88);
+        int randStepStart = 2;
+        int randStepFinish = 6;
+        int randStep = rand.nextInt(randStepStart, randStepFinish);
+        int defaultStartNum = 3;
+        int defaultFinishNum = 88;
+        int startNum = rand.nextInt(defaultStartNum, defaultFinishNum);
         // построение последовательности
         for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStep) {
             sequenceArr[f] = j;
@@ -61,7 +72,9 @@ public class Engine {
     public static char getRandomOperator() {
         // определение рандомного оператора
         Random rand = new Random();
-        int operatorRandomizer = rand.nextInt(1, 4);
+        int randNumOperatorStart = 1;
+        int randNumOperatorFinish = 4;
+        int operatorRandomizer = rand.nextInt(randNumOperatorStart, randNumOperatorFinish);
         char operator = ' ';
         // алгоритм рандомного оператора
         switch (operatorRandomizer) {

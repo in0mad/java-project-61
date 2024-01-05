@@ -7,11 +7,10 @@ public class Prime {
         String username = Engine.getName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int rightAnswers = 0;
-        int roundCounter = 3;
         String answer; // переменная - считыватель ответа пользователя
-        for (int i = 0; i < roundCounter; i++) {
+        for (int i = 0; i < Engine.defineRoundCount(); i++) {
             // рандомный операнд и поиск prime number
-            int randomNum = Engine.getRandomNumber(i+1);
+            int randomNum = Engine.getRandomNumber(i + 1);
             String isPrimeNumber = findPrimeNum(randomNum);
             // основная логика игры
             System.out.printf("Question: %d\n", randomNum);
@@ -25,7 +24,7 @@ public class Prime {
                 break;
             }
         }
-        if (rightAnswers == roundCounter) {
+        if (rightAnswers == Engine.defineRoundCount()) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }
