@@ -32,9 +32,9 @@ public class Engine {
     }
     public static int getRandomNumber() {
         Random randNum = new Random();
-        final int DEFAULT_START_NUM = 0;
-        final int DEFAULT_END_NUM = 100;
-        return randNum.nextInt(DEFAULT_START_NUM, DEFAULT_END_NUM);
+        final int default_START_NUM = 0;
+        final int default_END_NUM = 100;
+        return randNum.nextInt(default_START_NUM, default_END_NUM);
     }
     public static int getRandomNumber(int start, int end) {
         Random randNum = new Random();
@@ -43,24 +43,24 @@ public class Engine {
 
     public static int getRandomNumber(int start) {
         Random randNum = new Random();
-        int end = 100;
-        return randNum.nextInt(start, end);
+        final int default_END = 100;
+        return randNum.nextInt(start, default_END);
     }
 
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии
         Random rand = new Random();
-        final int DEFAULT_SEQ_LENGTH_START = 10;
-        final int DEFAULT_SEQ_LENGTH_FINISH = 16;
-        int sequenceLength = rand.nextInt(DEFAULT_SEQ_LENGTH_START, DEFAULT_SEQ_LENGTH_FINISH);
+        final int default_SEQ_LENGTH_START = 10;
+        final int default_SEQ_LENGTH_FINISH = 16;
+        int sequenceLength = rand.nextInt(default_SEQ_LENGTH_START, default_SEQ_LENGTH_FINISH);
         int[] sequenceArr = new int[sequenceLength];
         // определение шага последовательности и стартового числа
-        final int DEFAULT_RAND_STEP_START = 2;
-        final int DEFAULT_RAND_STEP_FINISH = 6;
-        int randStep = rand.nextInt(DEFAULT_RAND_STEP_START, DEFAULT_RAND_STEP_FINISH);
-        final int DEFAULT_START_NUM = 3;
-        final int DEFAULT_FINISH_NUM = 88;
-        int startNum = rand.nextInt(DEFAULT_START_NUM, DEFAULT_FINISH_NUM);
+        final int default_RAND_STEP_START = 2;
+        final int default_RAND_STEP_FINISH = 6;
+        int randStep = rand.nextInt(default_RAND_STEP_START, default_RAND_STEP_FINISH);
+        final int default_START_NUM = 3;
+        final int default_FINISH_NUM = 88;
+        int startNum = rand.nextInt(default_START_NUM, default_FINISH_NUM);
         // построение последовательности
         for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStep) {
             sequenceArr[f] = j;
@@ -70,9 +70,9 @@ public class Engine {
     public static char getRandomOperator() {
         // определение рандомного оператора
         Random rand = new Random();
-        final int DEFAULT_OPERATOR_START = 1;
-        final int DEFAULT_OPERATOR_FINISH = 4;
-        int operatorRandomizer = rand.nextInt(DEFAULT_OPERATOR_START, DEFAULT_OPERATOR_FINISH);
+        final int default_OPERATOR_START = 1;
+        final int default_OPERATOR_FINISH = 4;
+        int operatorRandomizer = rand.nextInt(default_OPERATOR_START, default_OPERATOR_FINISH);
         char operator = ' ';
         final int minus = 1;
         final int plus = 2;
