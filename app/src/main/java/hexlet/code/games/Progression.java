@@ -25,7 +25,8 @@ public class Progression {
                 missedNum = sequence[randNumPos - 1];
             }
             // взаимодействие с юзером
-            System.out.printf("Question: %s\n", textSequence.toString());
+            String trimSequence = textSequence.toString();
+            System.out.printf("Question: %s\n", trimSequence.trim());
             System.out.print("Your answer: ");
             answer = Engine.getIntAnswer();
             if (answer == missedNum) {
