@@ -71,8 +71,8 @@ public class Engine {
         // определение рандомного оператора
         Random rand = new Random();
         final int defaultOperatorStart = 1;
-        final int default_OperatorFinish = 4;
-        int operatorRandomizer = rand.nextInt(defaultOperatorStart, default_OperatorFinish);
+        final int defaultOperatorFinish = 4;
+        int operatorRandomizer = rand.nextInt(defaultOperatorStart, defaultOperatorFinish);
         char operator = ' ';
         final int minus = 1;
         final int plus = 2;
