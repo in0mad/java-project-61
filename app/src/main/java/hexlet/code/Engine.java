@@ -32,9 +32,9 @@ public class Engine {
     }
     public static int getRandomNumber() {
         Random randNum = new Random();
-        int defaultStartNum = 0;
-        int defaultEndNum = 100;
-        return randNum.nextInt(defaultStartNum, defaultEndNum);
+        final int DEFAULT_START_NUM = 0;
+        final int DEFAULT_END_NUM = 100;
+        return randNum.nextInt(DEFAULT_START_NUM, DEFAULT_END_NUM);
     }
     public static int getRandomNumber(int start, int end) {
         Random randNum = new Random();
@@ -50,17 +50,17 @@ public class Engine {
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии
         Random rand = new Random();
-        int defaultSequenceLengthStart = 10;
-        int defaultSequenceLengthEnd = 16;
-        int sequenceLength = rand.nextInt(defaultSequenceLengthStart, defaultSequenceLengthEnd);
+        final int DEFAULT_SEQ_LENGTH_START = 10;
+        final int DEFAULT_SEQ_LENGTH_FINISH = 16;
+        int sequenceLength = rand.nextInt(DEFAULT_SEQ_LENGTH_START, DEFAULT_SEQ_LENGTH_FINISH);
         int[] sequenceArr = new int[sequenceLength];
         // определение шага последовательности и стартового числа
-        int randStepStart = 2;
-        int randStepFinish = 6;
-        int randStep = rand.nextInt(randStepStart, randStepFinish);
-        int defaultStartNum = 3;
-        int defaultFinishNum = 88;
-        int startNum = rand.nextInt(defaultStartNum, defaultFinishNum);
+        final int DEFAULT_RAND_STEP_START = 2;
+        final int DEFAULT_RAND_STEP_FINISH = 6;
+        int randStep = rand.nextInt(DEFAULT_RAND_STEP_START, DEFAULT_RAND_STEP_FINISH);
+        final int DEFAULT_START_NUM = 3;
+        final int DEFAULT_FINISH_NUM = 88;
+        int startNum = rand.nextInt(DEFAULT_START_NUM, DEFAULT_FINISH_NUM);
         // построение последовательности
         for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStep) {
             sequenceArr[f] = j;
@@ -70,9 +70,9 @@ public class Engine {
     public static char getRandomOperator() {
         // определение рандомного оператора
         Random rand = new Random();
-        int randNumOperatorStart = 1;
-        int randNumOperatorFinish = 4;
-        int operatorRandomizer = rand.nextInt(randNumOperatorStart, randNumOperatorFinish);
+        final int DEFAULT_OPERATOR_START = 1;
+        final int DEFAULT_OPERATOR_FINISH = 4;
+        int operatorRandomizer = rand.nextInt(DEFAULT_OPERATOR_START, DEFAULT_OPERATOR_FINISH);
         char operator = ' ';
         final int minus = 1;
         final int plus = 2;

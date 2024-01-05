@@ -30,13 +30,13 @@ public class Prime {
     }
     public static String findPrimeNum(int number) {
         String result = "yes";
-        int primeNumChecker = 3;
+        final int PRIME_CHECKER = 3;
         int counter = 0;
         for (int f = 1; f <= number; f++) {
             if (number % f == 0) {
                 counter++;
             }
-            if (counter >= primeNumChecker) {
+            if (counter >= PRIME_CHECKER) {
                 result = "no";
                 return result;
             }
