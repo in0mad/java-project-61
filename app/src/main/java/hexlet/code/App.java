@@ -9,6 +9,12 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class App {
+    private static final int GREET_GAME = 1;
+    private static final int EVEN_GAME = 2;
+    private static final int CALC_GAME = 3;
+    private static final int GCD_GAME = 4;
+    private static final int PROGRESSION_GAME = 5;
+    private static final int PRIME_GAME = 6;
     public static void main(String[] args) {
         String gameMenu = """
                 Please enter the game number and press Enter.
@@ -25,22 +31,22 @@ public class App {
         Scanner sc = new Scanner(System.in);
         int gameChoose = sc.nextInt();
         switch (gameChoose) {
-            case 1:
+            case GREET_GAME:
                 Engine.sayHello();
                 break;
-            case 2:
+            case EVEN_GAME:
                 Even.startTheGame();
                 break;
-            case 3:
+            case CALC_GAME:
                 Calc.startTheGame();
                 break;
-            case 4:
+            case GCD_GAME:
                 Gcd.startTheGame();
                 break;
-            case 5:
+            case PROGRESSION_GAME:
                 Progression.startTheGame();
                 break;
-            case 6:
+            case PRIME_GAME:
                 Prime.startTheGame();
                 break;
             default:

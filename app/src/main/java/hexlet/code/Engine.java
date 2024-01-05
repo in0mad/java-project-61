@@ -4,9 +4,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Engine {
-    public static int defineRoundCount() {
-        return 3;
-    }
+    public static final int ROUND_COUNTER = 3;
     public static String getTextAnswer() {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
@@ -76,15 +74,18 @@ public class Engine {
         int randNumOperatorFinish = 4;
         int operatorRandomizer = rand.nextInt(randNumOperatorStart, randNumOperatorFinish);
         char operator = ' ';
+        final int minus = 1;
+        final int plus = 2;
+        final int multiply = 3;
         // алгоритм рандомного оператора
         switch (operatorRandomizer) {
-            case 1:
+            case minus:
                 operator = '-';
                 break;
-            case 2:
+            case plus:
                 operator = '+';
                 break;
-            case 3:
+            case multiply:
                 operator = '*';
                 break;
             default:

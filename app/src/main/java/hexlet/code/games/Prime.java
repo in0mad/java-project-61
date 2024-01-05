@@ -8,7 +8,7 @@ public class Prime {
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         int rightAnswers = 0;
         String answer; // переменная - считыватель ответа пользователя
-        for (int i = 0; i < Engine.defineRoundCount(); i++) {
+        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             // рандомный операнд и поиск prime number
             int randomNum = Engine.getRandomNumber(i + 1);
             String isPrimeNumber = findPrimeNum(randomNum);
@@ -24,7 +24,7 @@ public class Prime {
                 break;
             }
         }
-        if (rightAnswers == Engine.defineRoundCount()) {
+        if (rightAnswers == Engine.ROUND_COUNTER) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

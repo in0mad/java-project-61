@@ -11,7 +11,7 @@ public class Progression {
         StringBuilder textSequence;
         int missedNum = 0;
         // основная логика игры
-        for (int i = 0; i < Engine.defineRoundCount(); i++) {
+        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int[] sequence = Engine.getRandomSequence();
             textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
@@ -37,7 +37,7 @@ public class Progression {
                 break;
             }
         }
-        if (rightAnswers == Engine.defineRoundCount()) {
+        if (rightAnswers == Engine.ROUND_COUNTER) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

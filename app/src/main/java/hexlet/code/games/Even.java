@@ -9,7 +9,7 @@ public class Even {
         int rightAnswers = 0;
         String answer;
         String correctAnswer;
-        for (int i = 0; i < Engine.defineRoundCount(); i++) {
+        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
             int randomNum = Engine.getRandomNumber();
             System.out.println("Question: " + randomNum);
             System.out.print("Your answer: ");
@@ -31,7 +31,7 @@ public class Even {
                 break;
             }
         }
-        if (rightAnswers == Engine.defineRoundCount()) {
+        if (rightAnswers == Engine.ROUND_COUNTER) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }
