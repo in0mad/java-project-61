@@ -7,8 +7,9 @@ public class Gcd {
         String username = Engine.getName();
         System.out.println("Find the greatest common divisor of given numbers.");
         int rightAnswers = 0;
+        int roundCounter = 3;
         int answer;  // переменная - считыватель ответа пользователя
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < roundCounter; i++) {
             // рандомные операнды
             int randomNum1 = Engine.getRandomNumber();
             int randomNum2 = Engine.getRandomNumber();
@@ -26,7 +27,7 @@ public class Gcd {
                 break;
             }
         }
-        if (rightAnswers == 3) {
+        if (rightAnswers == roundCounter) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

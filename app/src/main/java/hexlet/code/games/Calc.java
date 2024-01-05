@@ -8,7 +8,8 @@ public class Calc {
         System.out.println("What is the result of the expression?.");
         int rightAnswers = 0;
         int answer;
-        for (int i = 0; i < 3; i++) {
+        int roundCounter = 3;
+        for (int i = 0; i < roundCounter; i++) {
             // рандомные операнды
             int randomNum1 = Engine.getRandomNumber();
             int randomNum2 = Engine.getRandomNumber();
@@ -39,7 +40,7 @@ public class Calc {
                 break;
             }
         }
-        if (rightAnswers == 3) {
+        if (rightAnswers == roundCounter) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

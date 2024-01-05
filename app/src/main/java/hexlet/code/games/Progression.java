@@ -8,10 +8,11 @@ public class Progression {
         System.out.println("What number is missing in the progression?");
         int rightAnswers = 0;
         int answer;  // переменная - считыватель ответа пользователя
+        int roundCounter = 3;
         StringBuilder textSequence;
         int missedNum = 0;
         // основная логика игры
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < roundCounter; i++) {
             int[] sequence = Engine.getRandomSequence();
             textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
@@ -37,7 +38,7 @@ public class Progression {
                 break;
             }
         }
-        if (rightAnswers == 3) {
+        if (rightAnswers == roundCounter) {
             System.out.printf("Congratulations, %s!\n", username);
         }
     }

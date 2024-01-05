@@ -38,6 +38,12 @@ public class Engine {
         return randNum.nextInt(start, end);
     }
 
+    public static int getRandomNumber(int start) {
+        Random randNum = new Random();
+        int end = 100;
+        return randNum.nextInt(start, end);
+    }
+
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии
         Random rand = new Random();
