@@ -28,7 +28,7 @@ public class Progression {
             }
             String trimSequence = textSequence.toString().trim();
             questions[i][j] = trimSequence;  // question
-            questions[i][j+1] = String.valueOf(missedNum);  // answer
+            questions[i][j + 1] = String.valueOf(missedNum);  // answer
         }
         Engine.launchTheGame(ruleOfTheGame, questions);
     }

@@ -41,7 +41,7 @@ public class Engine {
         String username = getName();
         System.out.println(gameRule);
         for (String[] i : questionAnswer) {
-            System.out.println(i[0]);
+            System.out.printf("Question: %s\n", i[0]);
             System.out.print("Your answer: ");
             String answer = getTextAnswer();
             if (i[1].equals(answer)) {

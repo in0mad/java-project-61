@@ -22,7 +22,7 @@ public class Calc {
             questionBuilder = new StringBuilder();
             questionBuilder.append(randomNum1).append(" ").append(operator).append(" ").append(randomNum2);
             questions[i][j] = questionBuilder.toString();  // question
-            questions[i][j+1] = String.valueOf(arithmeticResult);  // answer
+            questions[i][j + 1] = String.valueOf(arithmeticResult);  // answer
         }
         Engine.launchTheGame(ruleOfTheGame, questions);
     }

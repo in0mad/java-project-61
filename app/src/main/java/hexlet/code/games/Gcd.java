@@ -15,7 +15,7 @@ public class Gcd {
             // делитель
             int denominator = findDenominator(randomNum1, randomNum2);
             questions[i][j] = randomNum1 + " " + randomNum2; // question
-            questions[i][j+1] = String.valueOf(denominator); // answer
+            questions[i][j + 1] = String.valueOf(denominator); // answer
         }
         Engine.launchTheGame(ruleOfTheGame, questions);
     }

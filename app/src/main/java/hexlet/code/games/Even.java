@@ -12,7 +12,7 @@ public class Even {
             int randomNum = Engine.getRandomNumber();
             String answer = randomNum % 2 == 0 ? "yes" : "no";
             questions[i][j] = String.valueOf(randomNum);  // question
-            questions[i][j+1] = answer;  // answer
+            questions[i][j + 1] = answer;  // answer
         }
         Engine.launchTheGame(ruleOfTheGame, questions);
     }

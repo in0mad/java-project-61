@@ -14,7 +14,7 @@ public class Prime {
             // поиск prime number
             String isPrimeNumber = findPrimeNum(randomNum);
             questions[i][j] = String.valueOf(randomNum); // question
-            questions[i][j+1] = isPrimeNumber;  // answer
+            questions[i][j + 1] = isPrimeNumber;  // answer
         }
         Engine.launchTheGame(ruleOfTheGame, questions);
     }
