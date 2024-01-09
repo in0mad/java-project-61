@@ -16,6 +16,7 @@ public class Prime {
             questions[i][j] = String.valueOf(randomNum); // question
             questions[i][j+1] = isPrimeNumber;  // answer
         }
+        Engine.launchTheGame(ruleOfTheGame, questions);
     }
     public static String findPrimeNum(int number) {
         String result = "yes";

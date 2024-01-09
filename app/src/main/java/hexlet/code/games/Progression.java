@@ -30,6 +30,7 @@ public class Progression {
             questions[i][j] = trimSequence;  // question
             questions[i][j+1] = String.valueOf(missedNum);  // answer
         }
+        Engine.launchTheGame(ruleOfTheGame, questions);
     }
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии

@@ -24,6 +24,7 @@ public class Calc {
             questions[i][j] = questionBuilder.toString();  // question
             questions[i][j+1] = String.valueOf(arithmeticResult);  // answer
         }
+        Engine.launchTheGame(ruleOfTheGame, questions);
     }
     public static int makeArithmeticResult(char operator, int num1, int num2) {
         int arifmeticResult = 0;

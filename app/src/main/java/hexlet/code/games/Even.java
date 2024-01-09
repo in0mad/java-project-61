@@ -14,5 +14,6 @@ public class Even {
             questions[i][j] = String.valueOf(randomNum);  // question
             questions[i][j+1] = answer;  // answer
         }
+        Engine.launchTheGame(ruleOfTheGame, questions);
     }
 }
