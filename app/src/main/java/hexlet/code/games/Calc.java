@@ -13,8 +13,8 @@ public class Calc {
         String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомные операнды
-            int randomNum1 = Engine.getRandomNumber();
-            int randomNum2 = Engine.getRandomNumber();
+            int randomNum1 = getRandomNumber();
+            int randomNum2 = getRandomNumber();
             // переменная результата операций
             char operator = getRandomOperator();
             int arithmeticResult = makeArithmeticResult(operator, randomNum1, randomNum2);
@@ -68,5 +68,11 @@ public class Calc {
                 break;
         }
         return operator;
+    }
+    public static int getRandomNumber() {
+        Random randNum = new Random();
+        final int defaultStartNum = 0;
+        final int defaultEndNum = 100;
+        return randNum.nextInt(defaultStartNum, defaultEndNum);
     }
 }

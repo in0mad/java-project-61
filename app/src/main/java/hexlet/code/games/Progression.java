@@ -16,7 +16,7 @@ public class Progression {
             int[] sequence = getRandomSequence();
             textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
-            int randNumPos = Engine.getRandomNumber(2, sequence.length + 1);
+            int randNumPos = getRandomNumber(2, sequence.length + 1);
             // построение последовательности
             for (int f = 0; f < sequence.length; f++) {
                 if (f == randNumPos - 1) {
@@ -51,5 +51,9 @@ public class Progression {
             sequenceArr[f] = j;
         }
         return sequenceArr;
+    }
+    public static int getRandomNumber(int start, int end) {
+        Random randNum = new Random();
+        return randNum.nextInt(start, end);
     }
 }

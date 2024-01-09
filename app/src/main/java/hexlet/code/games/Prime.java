@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
+
 public class Prime {
     public static void startTheGame() {
         String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
@@ -10,7 +12,7 @@ public class Prime {
         String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомный операнд
-            int randomNum = Engine.getRandomNumber(i + 1);
+            int randomNum = getRandomNumber(i + 1);
             // поиск prime number
             String isPrimeNumber = findPrimeNum(randomNum);
             questions[i][j] = String.valueOf(randomNum); // question
@@ -32,5 +34,10 @@ public class Prime {
             }
         }
         return result;
+    }
+    public static int getRandomNumber(int start) {
+        Random randNum = new Random();
+        final int defaultEnd = 100;
+        return randNum.nextInt(start, defaultEnd);
     }
 }

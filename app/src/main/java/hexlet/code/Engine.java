@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import java.util.Random;
 
 public class Engine {
     public static final int ROUND_NUMBERS = 3;
@@ -16,21 +15,6 @@ public class Engine {
         String userName = scanner.next();
         System.out.printf("Hello, %s!\n", userName);
         return userName;
-    }
-    public static int getRandomNumber() {
-        Random randNum = new Random();
-        final int defaultStartNum = 0;
-        final int defaultEndNum = 100;
-        return randNum.nextInt(defaultStartNum, defaultEndNum);
-    }
-    public static int getRandomNumber(int start, int end) {
-        Random randNum = new Random();
-        return randNum.nextInt(start, end);
-    }
-    public static int getRandomNumber(int start) {
-        Random randNum = new Random();
-        final int defaultEnd = 100;
-        return randNum.nextInt(start, defaultEnd);
     }
     public static void callFaultMessage(String answer, String correctAnswer, String username) {
         System.out.printf("'%s' is a wrong answer ;(. Correct answer was '%s'.\n", answer, correctAnswer);

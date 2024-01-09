@@ -2,6 +2,8 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
+
 public class Gcd {
     public static void startTheGame() {
         String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
@@ -10,8 +12,8 @@ public class Gcd {
         String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомные операнды
-            int randomNum1 = Engine.getRandomNumber();
-            int randomNum2 = Engine.getRandomNumber();
+            int randomNum1 = getRandomNumber();
+            int randomNum2 = getRandomNumber();
             // делитель
             int denominator = findDenominator(randomNum1, randomNum2);
             questions[i][j] = randomNum1 + " " + randomNum2; // question
@@ -29,5 +31,11 @@ public class Gcd {
             }
         }
         return denominator;
+    }
+    public static int getRandomNumber() {
+        Random randNum = new Random();
+        final int defaultStartNum = 0;
+        final int defaultEndNum = 100;
+        return randNum.nextInt(defaultStartNum, defaultEndNum);
     }
 }
