@@ -11,7 +11,7 @@ public class Progression {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         int missedNum = 0;
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             int[] sequence = getRandomSequence();
             textSequence = new StringBuilder();

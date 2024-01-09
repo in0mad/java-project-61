@@ -7,7 +7,7 @@ public class Prime {
         String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         // построение вопросов
         // вопрос - ответ для каждого раунда
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомный операнд
             int randomNum = Engine.getRandomNumber(i + 1);

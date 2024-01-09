@@ -7,7 +7,7 @@ public class Even {
         String ruleOfTheGame = "Answer 'yes' if the number is even, otherwise answer 'no'.";
         // построение вопросов
         // вопрос - ответ для каждого раунда
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             int randomNum = Engine.getRandomNumber();
             String answer = randomNum % 2 == 0 ? "yes" : "no";

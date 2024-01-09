@@ -10,7 +10,7 @@ public class Calc {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         StringBuilder questionBuilder;
-        String[][] questions = new String[3][2];
+        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
         for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомные операнды
             int randomNum1 = Engine.getRandomNumber();

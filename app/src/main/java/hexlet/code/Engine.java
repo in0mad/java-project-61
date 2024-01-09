@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class Engine {
-//    public static final int ROUND_COUNTER = 3;
+    public static final int ROUND_NUMBERS = 3;
     public static String getTextAnswer() {
         Scanner scanner = new Scanner(System.in);
         return scanner.next();
