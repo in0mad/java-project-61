@@ -2,20 +2,22 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 
+import java.util.Random;
+
 public class Progression {
     public static void startTheGame() {
-        String username = Engine.getName();
-        System.out.println("What number is missing in the progression?");
-        int rightAnswers = 0;
-        int answer;  // переменная - считыватель ответа пользователя
+        String ruleOfTheGame = "What number is missing in the progression?";
         StringBuilder textSequence;
+        // построение вопросов
+        // вопрос - ответ для каждого раунда
         int missedNum = 0;
-        // основная логика игры
-        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
-            int[] sequence = Engine.getRandomSequence();
+        String[][] questions = new String[3][2];
+        for (int i = 0, j = 0; i < questions.length; i++) {
+            int[] sequence = getRandomSequence();
             textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
             int randNumPos = Engine.getRandomNumber(2, sequence.length + 1);
+            // построение последовательности
             for (int f = 0; f < sequence.length; f++) {
                 if (f == randNumPos - 1) {
                     textSequence.append(" " + "..");
@@ -24,21 +26,29 @@ public class Progression {
                 }
                 missedNum = sequence[randNumPos - 1];
             }
-            // взаимодействие с юзером
-            String trimSequence = textSequence.toString();
-            System.out.printf("Question: %s\n", trimSequence.trim());
-            System.out.print("Your answer: ");
-            answer = Engine.getIntAnswer();
-            if (answer == missedNum) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else {
-                Engine.callFaultMessage(answer, missedNum, username);
-                break;
-            }
+            String trimSequence = textSequence.toString().trim();
+            questions[i][j] = trimSequence;  // question
+            questions[i][j+1] = String.valueOf(missedNum);  // answer
         }
-        if (rightAnswers == Engine.ROUND_COUNTER) {
-            System.out.printf("Congratulations, %s!\n", username);
+    }
+    public static int[] getRandomSequence() {
+        // установка рандомной длины прогрессии
+        Random rand = new Random();
+        final int defaultSeqLengthStart = 10;
+        final int defaultSeqLengthFinish = 16;
+        int sequenceLength = rand.nextInt(defaultSeqLengthStart, defaultSeqLengthFinish);
+        int[] sequenceArr = new int[sequenceLength];
+        // определение шага последовательности и стартового числа
+        final int defaultRandStepStart = 2;
+        final int defaultRandStepFinish = 6;
+        int randStep = rand.nextInt(defaultRandStepStart, defaultRandStepFinish);
+        final int defaultStartNum = 3;
+        final int defaultFinishNum = 88;
+        int startNum = rand.nextInt(defaultStartNum, defaultFinishNum);
+        // построение последовательности
+        for (int f = 0, j = startNum; f < sequenceArr.length; f++, j = j + randStep) {
+            sequenceArr[f] = j;
         }
+        return sequenceArr;
     }
 }

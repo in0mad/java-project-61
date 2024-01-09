@@ -4,30 +4,18 @@ import hexlet.code.Engine;
 
 public class Gcd {
     public static void startTheGame() {
-        String username = Engine.getName();
-        System.out.println("Find the greatest common divisor of given numbers.");
-        int rightAnswers = 0;
-        int answer;  // переменная - считыватель ответа пользователя
-        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
+        String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
+        // построение вопросов
+        // вопрос - ответ для каждого раунда
+        String[][] questions = new String[3][2];
+        for (int i = 0, j = 0; i < questions.length; i++) {
             // рандомные операнды
             int randomNum1 = Engine.getRandomNumber();
             int randomNum2 = Engine.getRandomNumber();
             // делитель
             int denominator = findDenominator(randomNum1, randomNum2);
-            // основная логика игры
-            System.out.printf("Question: %d %d\n", randomNum1, randomNum2);
-            System.out.print("Your answer: ");
-            answer = Engine.getIntAnswer();
-            if (answer == denominator) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else {
-                Engine.callFaultMessage(answer, denominator, username);
-                break;
-            }
-        }
-        if (rightAnswers == Engine.ROUND_COUNTER) {
-            System.out.printf("Congratulations, %s!\n", username);
+            questions[i][j] = randomNum1 + " " + randomNum2; // question
+            questions[i][j+1] = String.valueOf(denominator); // answer
         }
     }
     public static int findDenominator(int num1, int num2) {

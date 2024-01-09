@@ -4,28 +4,17 @@ import hexlet.code.Engine;
 
 public class Prime {
     public static void startTheGame() {
-        String username = Engine.getName();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-        int rightAnswers = 0;
-        String answer; // переменная - считыватель ответа пользователя
-        for (int i = 0; i < Engine.ROUND_COUNTER; i++) {
-            // рандомный операнд и поиск prime number
+        String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        // построение вопросов
+        // вопрос - ответ для каждого раунда
+        String[][] questions = new String[3][2];
+        for (int i = 0, j = 0; i < questions.length; i++) {
+            // рандомный операнд
             int randomNum = Engine.getRandomNumber(i + 1);
+            // поиск prime number
             String isPrimeNumber = findPrimeNum(randomNum);
-            // основная логика игры
-            System.out.printf("Question: %d\n", randomNum);
-            System.out.print("Your answer: ");
-            answer = Engine.getTextAnswer();
-            if (answer.equals(isPrimeNumber)) {
-                rightAnswers++;
-                System.out.println("Correct!");
-            } else {
-                Engine.callFaultMessage(answer, isPrimeNumber, username);
-                break;
-            }
-        }
-        if (rightAnswers == Engine.ROUND_COUNTER) {
-            System.out.printf("Congratulations, %s!\n", username);
+            questions[i][j] = String.valueOf(randomNum); // question
+            questions[i][j+1] = isPrimeNumber;  // answer
         }
     }
     public static String findPrimeNum(int number) {
