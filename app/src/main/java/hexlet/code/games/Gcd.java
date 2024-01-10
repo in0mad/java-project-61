@@ -9,17 +9,17 @@ public class Gcd {
         String ruleOfTheGame = "Find the greatest common divisor of given numbers.";
         // построение вопросов
         // вопрос - ответ для каждого раунда
-        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questions.length; i++) {
+        String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
+        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
             // рандомные операнды
             int randomNum1 = getRandomNumber();
             int randomNum2 = getRandomNumber();
             // делитель
             int denominator = findDenominator(randomNum1, randomNum2);
-            questions[i][j] = randomNum1 + " " + randomNum2; // question
-            questions[i][j + 1] = String.valueOf(denominator); // answer
+            questionsAnswers[i][j] = randomNum1 + " " + randomNum2; // question
+            questionsAnswers[i][j + 1] = String.valueOf(denominator); // answer
         }
-        Engine.launchTheGame(ruleOfTheGame, questions);
+        Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static int findDenominator(int num1, int num2) {
         int denominator = 0;

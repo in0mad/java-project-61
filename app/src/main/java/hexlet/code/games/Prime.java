@@ -9,16 +9,16 @@ public class Prime {
         String ruleOfTheGame = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         // построение вопросов
         // вопрос - ответ для каждого раунда
-        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questions.length; i++) {
+        String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
+        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
             // рандомный операнд
             int randomNum = getRandomNumber(i + 1);
             // поиск prime number
             String isPrimeNumber = findPrimeNum(randomNum);
-            questions[i][j] = String.valueOf(randomNum); // question
-            questions[i][j + 1] = isPrimeNumber;  // answer
+            questionsAnswers[i][j] = String.valueOf(randomNum); // question
+            questionsAnswers[i][j + 1] = isPrimeNumber;  // answer
         }
-        Engine.launchTheGame(ruleOfTheGame, questions);
+        Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String findPrimeNum(int number) {
         String result = "yes";

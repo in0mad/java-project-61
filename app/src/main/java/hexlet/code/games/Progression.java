@@ -11,8 +11,8 @@ public class Progression {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         int missedNum = 0;
-        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questions.length; i++) {
+        String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
+        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
             int[] sequence = getRandomSequence();
             textSequence = new StringBuilder();
             // определение позиции рандомного числа в последовательности
@@ -27,10 +27,10 @@ public class Progression {
                 missedNum = sequence[randNumPos - 1];
             }
             String trimSequence = textSequence.toString().trim();
-            questions[i][j] = trimSequence;  // question
-            questions[i][j + 1] = String.valueOf(missedNum);  // answer
+            questionsAnswers[i][j] = trimSequence;  // question
+            questionsAnswers[i][j + 1] = String.valueOf(missedNum);  // answer
         }
-        Engine.launchTheGame(ruleOfTheGame, questions);
+        Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии

@@ -10,8 +10,8 @@ public class Calc {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         StringBuilder questionBuilder;
-        String[][] questions = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questions.length; i++) {
+        String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
+        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
             // рандомные операнды
             int randomNum1 = getRandomNumber();
             int randomNum2 = getRandomNumber();
@@ -21,10 +21,10 @@ public class Calc {
             // построение вопроса
             questionBuilder = new StringBuilder();
             questionBuilder.append(randomNum1).append(" ").append(operator).append(" ").append(randomNum2);
-            questions[i][j] = questionBuilder.toString();  // question
-            questions[i][j + 1] = String.valueOf(arithmeticResult);  // answer
+            questionsAnswers[i][j] = questionBuilder.toString();  // question
+            questionsAnswers[i][j + 1] = String.valueOf(arithmeticResult);  // answer
         }
-        Engine.launchTheGame(ruleOfTheGame, questions);
+        Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static int makeArithmeticResult(char operator, int num1, int num2) {
         int arifmeticResult = 0;
