@@ -32,7 +32,7 @@ public class App {
         int gameChoose = sc.nextInt();
         switch (gameChoose) {
             case GREET_GAME:
-                System.out.println(Engine.getName());
+                Cli.greet();
                 break;
             case EVEN_GAME:
                 Even.startTheGame();
@@ -52,6 +52,5 @@ public class App {
             default:
                 break;
         }
-        sc.close();
     }
 }

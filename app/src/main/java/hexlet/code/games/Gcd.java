@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
@@ -10,18 +11,23 @@ public class Gcd {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
-            // рандомные операнды
-            int randomNum1 = getRandomNumber();
-            int randomNum2 = getRandomNumber();
-            // делитель
-            int denominator = findDenominator(randomNum1, randomNum2);
-            questionsAnswers[i][j] = randomNum1 + " " + randomNum2; // question
-            questionsAnswers[i][j + 1] = String.valueOf(denominator); // answer
+        for (String[] rounds : questionsAnswers) {
+            generateRoundData(rounds);
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static int findDenominator(int num1, int num2) {
+    public static void generateRoundData(String[] rounds) {
+        final int questionArr = 0;
+        final int answerArr = 1;
+        // рандомные операнды
+        int randomNum1 = Utils.getRandomNumber();
+        int randomNum2 = Utils.getRandomNumber();
+        // делитель
+        int denominator = findGCD(randomNum1, randomNum2);
+        rounds[questionArr] = randomNum1 + " " + randomNum2;  // question
+        rounds[answerArr] = String.valueOf(denominator);  // answer
+    }
+    public static int findGCD(int num1, int num2) {
         int denominator = 0;
         int minFigure = Math.min(num1, num2);
         int maxFigure = Math.max(num1, num2);
@@ -31,11 +37,5 @@ public class Gcd {
             }
         }
         return denominator;
-    }
-    public static int getRandomNumber() {
-        Random randNum = new Random();
-        final int defaultStartNum = 0;
-        final int defaultEndNum = 100;
-        return randNum.nextInt(defaultStartNum, defaultEndNum);
     }
 }

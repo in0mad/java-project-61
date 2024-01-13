@@ -1,36 +1,42 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
 public class Progression {
     public static void startTheGame() {
         String ruleOfTheGame = "What number is missing in the progression?";
-        StringBuilder textSequence;
         // построение вопросов
         // вопрос - ответ для каждого раунда
-        int missedNum = 0;
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
-            int[] sequence = getRandomSequence();
-            textSequence = new StringBuilder();
-            // определение позиции рандомного числа в последовательности
-            int randNumPos = getRandomNumber(2, sequence.length + 1);
-            // построение последовательности
-            for (int f = 0; f < sequence.length; f++) {
-                if (f == randNumPos - 1) {
-                    textSequence.append(" " + "..");
-                } else {
-                    textSequence.append(" ").append(sequence[f]);
-                }
-                missedNum = sequence[randNumPos - 1];
-            }
-            String trimSequence = textSequence.toString().trim();
-            questionsAnswers[i][j] = trimSequence;  // question
-            questionsAnswers[i][j + 1] = String.valueOf(missedNum);  // answer
+        for (String[] rounds : questionsAnswers) {
+            generateRoundData(rounds);
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
+    }
+    public static void generateRoundData(String[] rounds) {
+        int missedNum = 0;
+        StringBuilder textSequence;
+        final int questionArr = 0;
+        final int answerArr = 1;
+        int[] sequence = getRandomSequence();
+        textSequence = new StringBuilder();
+        // определение позиции рандомного числа в последовательности
+        int randNumPos = Utils.getRandomNumber(2, sequence.length + 1);
+        // построение последовательности
+        for (int f = 0; f < sequence.length; f++) {
+            if (f == randNumPos - 1) {
+                textSequence.append(" " + "..");
+            } else {
+                textSequence.append(" ").append(sequence[f]);
+            }
+            missedNum = sequence[randNumPos - 1];
+        }
+        String trimSequence = textSequence.toString().trim();
+        rounds[questionArr] = trimSequence;  // question
+        rounds[answerArr] = String.valueOf(missedNum);  // answer
     }
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии
@@ -51,9 +57,5 @@ public class Progression {
             sequenceArr[f] = j;
         }
         return sequenceArr;
-    }
-    public static int getRandomNumber(int start, int end) {
-        Random randNum = new Random();
-        return randNum.nextInt(start, end);
     }
 }

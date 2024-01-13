@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.Random;
 
@@ -10,15 +11,21 @@ public class Prime {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (int i = 0, j = 0; i < questionsAnswers.length; i++) {
-            // рандомный операнд
-            int randomNum = getRandomNumber(i + 1);
-            // поиск prime number
-            String isPrimeNumber = findPrimeNum(randomNum);
-            questionsAnswers[i][j] = String.valueOf(randomNum); // question
-            questionsAnswers[i][j + 1] = isPrimeNumber;  // answer
+        for (String[] rounds : questionsAnswers) {
+            generateRoundData(rounds);
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
+    }
+    public static void generateRoundData(String[] rounds) {
+        final int questionArr = 0;
+        final int answerArr = 1;
+        // рандомный операнд
+        int defaultStartNumRandom = 2;
+        int randomNum = Utils.getRandomNumber(defaultStartNumRandom);
+        // поиск prime number
+        String realPrimeNumber = findPrimeNum(randomNum);
+        rounds[questionArr] = String.valueOf(randomNum);  // question
+        rounds[answerArr] = realPrimeNumber;  // answer
     }
     public static String findPrimeNum(int number) {
         String result = "yes";
@@ -34,10 +41,5 @@ public class Prime {
             }
         }
         return result;
-    }
-    public static int getRandomNumber(int start) {
-        Random randNum = new Random();
-        final int defaultEnd = 100;
-        return randNum.nextInt(start, defaultEnd);
     }
 }
