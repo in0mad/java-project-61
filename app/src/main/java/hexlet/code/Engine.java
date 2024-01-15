@@ -14,7 +14,6 @@ public class Engine {
         System.out.print("May I have your name? ");
         String username = scanner.next();
         System.out.printf("Hello, %s!\n", username);
-        int rightAnswersCount = 0;
         System.out.println(gameRule);
         for (String[] i : questionAnswer) {
             System.out.printf("Question: %s\n", i[0]);
@@ -22,14 +21,11 @@ public class Engine {
             String answer = scanner.next();
             if (i[1].equals(answer)) {
                 System.out.println("Correct!");
-                rightAnswersCount++;
             } else {
                 callFaultMessage(answer, i[1], username);
-                break;
+                return;
             }
         }
-        if (rightAnswersCount == questionAnswer.length) {
-            System.out.printf("Congratulations, %s!\n", username);
-        }
+        System.out.printf("Congratulations, %s!\n", username);
     }
 }
