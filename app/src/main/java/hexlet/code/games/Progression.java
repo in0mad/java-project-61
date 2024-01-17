@@ -11,16 +11,15 @@ public class Progression {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (String[] rounds : questionsAnswers) {
-            generateRoundData(rounds);
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            questionsAnswers[i] = generateRoundData();
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static void generateRoundData(String[] rounds) {
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
         int missedNum = 0;
         StringBuilder textSequence;
-        final int questionArr = 0;
-        final int answerArr = 1;
         int[] sequence = getRandomSequence();
         textSequence = new StringBuilder();
         // определение позиции рандомного числа в последовательности
@@ -35,8 +34,9 @@ public class Progression {
             missedNum = sequence[randNumPos - 1];
         }
         String trimSequence = textSequence.toString().trim();
-        rounds[questionArr] = trimSequence;  // question
-        rounds[answerArr] = String.valueOf(missedNum);  // answer
+        questionAndAnswer[0] = trimSequence;  // question
+        questionAndAnswer[1] = String.valueOf(missedNum);  // answer
+        return questionAndAnswer;
     }
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии

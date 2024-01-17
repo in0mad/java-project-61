@@ -9,21 +9,21 @@ public class Gcd {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (String[] rounds : questionsAnswers) {
-            generateRoundData(rounds);
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            questionsAnswers[i] = generateRoundData();
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static void generateRoundData(String[] rounds) {
-        final int questionArr = 0;
-        final int answerArr = 1;
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
         // рандомные операнды
         int randomNum1 = Utils.getRandomNumber();
         int randomNum2 = Utils.getRandomNumber();
         // делитель
         int denominator = findGCD(randomNum1, randomNum2);
-        rounds[questionArr] = randomNum1 + " " + randomNum2;  // question
-        rounds[answerArr] = String.valueOf(denominator);  // answer
+        questionAndAnswer[0] = randomNum1 + " " + randomNum2;  // question
+        questionAndAnswer[1] = String.valueOf(denominator);  // answer
+        return questionAndAnswer;
     }
     public static int findGCD(int num1, int num2) {
         int denominator = 0;

@@ -9,18 +9,18 @@ public class Even {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (String[] rounds : questionsAnswers) {
-            generateRoundData(rounds);
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            questionsAnswers[i] = generateRoundData();
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static void generateRoundData(String[] rounds) {
-        final int questionArr = 0;
-        final int answerArr = 1;
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
         int randomNum = Utils.getRandomNumber();
         String resultEven = isEven(randomNum) ? "yes" : "no";
-        rounds[questionArr] = String.valueOf(randomNum);  // question
-        rounds[answerArr] = resultEven;  // answer
+        questionAndAnswer[0] = String.valueOf(randomNum);  // question
+        questionAndAnswer[1] = resultEven;  // answer
+        return questionAndAnswer;
     }
     public static boolean isEven(int randomNum) {
         return randomNum % 2 == 0;

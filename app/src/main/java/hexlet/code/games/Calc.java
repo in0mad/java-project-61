@@ -11,15 +11,13 @@ public class Calc {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (String[] rounds : questionsAnswers) {
-            generateRoundData(rounds);
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            questionsAnswers[i] = generateRoundData();
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static void generateRoundData(String[] rounds) {
-        final int questionArr = 0;
-        final int answerArr = 1;
-        StringBuilder questionBuilder;
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
         int randomNum1 = Utils.getRandomNumber();
         int randomNum2 = Utils.getRandomNumber();
         // переменная результата операций
@@ -27,23 +25,23 @@ public class Calc {
         int arithmeticResult = 0;
         try {
             arithmeticResult = makeArithmeticResult(operator, randomNum1, randomNum2);
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             System.out.println(ex.getMessage());
             System.exit(0);
         }
         // построение вопроса
-        questionBuilder = new StringBuilder();
-        questionBuilder.append(randomNum1).append(" ").append(operator).append(" ").append(randomNum2);
-        rounds[questionArr] = questionBuilder.toString();  // question
-        rounds[answerArr] = String.valueOf(arithmeticResult);  // answer
+        String question = String.format("%d %c %d", randomNum1, operator, randomNum2);
+        questionAndAnswer[0] = question;  // question
+        questionAndAnswer[1] = String.valueOf(arithmeticResult);  // answer
+        return questionAndAnswer;
     }
     public static int makeArithmeticResult(char operator, int num1, int num2) throws Exception {
+        String errorMessage = String.format("%c is a wrong operator in the round generator", operator);
         return switch (operator) {
             case '-' -> num1 - num2;
             case '+' -> num1 + num2;
             case '*' -> num1 * num2;
-            default -> throw new Exception(operator + " is a wrong operator. Declared '-', '+', '*' only");
+            default -> throw new Exception(errorMessage);
         };
     }
     public static char getRandomOperator() {
@@ -54,19 +52,5 @@ public class Calc {
         int operatorRandomizer = rand.nextInt(defaultOperatorStart, defaultOperatorFinish);
         char[] symbols = {'-', '+', '*'};
         return symbols[operatorRandomizer];
-//        final int minus = 1;
-//        final int plus = 2;
-//        final int multiply = 3;
-//        // алгоритм рандомного оператора
-//        switch (operatorRandomizer) {
-//            case minus:
-//                return symbols[0];
-//            case plus:
-//                return symbols[1];
-//            case multiply:
-//                return symbols[2];
-//            default:
-//                break;
-//        }
     }
 }

@@ -9,26 +9,26 @@ public class Prime {
         // построение вопросов
         // вопрос - ответ для каждого раунда
         String[][] questionsAnswers = new String[Engine.ROUND_NUMBERS][2];
-        for (String[] rounds : questionsAnswers) {
-            generateRoundData(rounds);
+        for (int i = 0; i < questionsAnswers.length; i++) {
+            questionsAnswers[i] = generateRoundData();
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
-    public static void generateRoundData(String[] rounds) {
-        final int questionArr = 0;
-        final int answerArr = 1;
-        final int endRandomBorder = 100;
+    public static String[] generateRoundData() {
+        String[] questionAndAnswer = new String[2];
+        int endRandomBorder = 100;
         // рандомный операнд
         int defaultStartNumRandom = 2;
         int randomNum = Utils.getRandomNumber(defaultStartNumRandom, endRandomBorder);
         // поиск prime number
         String realPrimeNumber = isPrimeNum(randomNum) ? "yes" : "no";
-        rounds[questionArr] = String.valueOf(randomNum);  // question
-        rounds[answerArr] = realPrimeNumber;  // answer
+        questionAndAnswer[0] = String.valueOf(randomNum);  // question
+        questionAndAnswer[1] = realPrimeNumber;  // answer
+        return questionAndAnswer;
     }
     public static boolean isPrimeNum(int number) {
         boolean result = true;
-        final int primeChecker = 3;
+        int primeChecker = 3;
         int counter = 0;
         for (int f = 1; f <= number; f++) {
             if (number % f == 0) {
