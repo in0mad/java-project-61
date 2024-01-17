@@ -15,15 +15,14 @@ public class Gcd {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        String[] questionAndAnswer = new String[2];
         // рандомные операнды
         int randomNum1 = Utils.getRandomNumber();
         int randomNum2 = Utils.getRandomNumber();
         // делитель
         int denominator = findGCD(randomNum1, randomNum2);
-        questionAndAnswer[0] = randomNum1 + " " + randomNum2;  // question
-        questionAndAnswer[1] = String.valueOf(denominator);  // answer
-        return questionAndAnswer;
+        String question = randomNum1 + " " + randomNum2;  // question
+        String answer = String.valueOf(denominator);  // answer
+        return new String[]{question, answer};
     }
     public static int findGCD(int num1, int num2) {
         int denominator = 0;

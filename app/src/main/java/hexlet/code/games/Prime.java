@@ -15,16 +15,14 @@ public class Prime {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        String[] questionAndAnswer = new String[2];
         int endRandomBorder = 100;
         // рандомный операнд
         int defaultStartNumRandom = 2;
         int randomNum = Utils.getRandomNumber(defaultStartNumRandom, endRandomBorder);
         // поиск prime number
-        String realPrimeNumber = isPrimeNum(randomNum) ? "yes" : "no";
-        questionAndAnswer[0] = String.valueOf(randomNum);  // question
-        questionAndAnswer[1] = realPrimeNumber;  // answer
-        return questionAndAnswer;
+        String question = String.valueOf(randomNum);  // question
+        String answer = isPrimeNum(randomNum) ? "yes" : "no";  // answer
+        return new String[]{question, answer};
     }
     public static boolean isPrimeNum(int number) {
         boolean result = true;

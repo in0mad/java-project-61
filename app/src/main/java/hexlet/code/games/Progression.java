@@ -17,7 +17,6 @@ public class Progression {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        String[] questionAndAnswer = new String[2];
         int missedNum = 0;
         StringBuilder textSequence;
         int[] sequence = getRandomSequence();
@@ -33,10 +32,9 @@ public class Progression {
             }
             missedNum = sequence[randNumPos - 1];
         }
-        String trimSequence = textSequence.toString().trim();
-        questionAndAnswer[0] = trimSequence;  // question
-        questionAndAnswer[1] = String.valueOf(missedNum);  // answer
-        return questionAndAnswer;
+        String question = textSequence.toString().trim();  // question
+        String answer = String.valueOf(missedNum);  // answer
+        return new String[]{question, answer};
     }
     public static int[] getRandomSequence() {
         // установка рандомной длины прогрессии

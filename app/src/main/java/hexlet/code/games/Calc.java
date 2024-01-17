@@ -17,7 +17,6 @@ public class Calc {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        String[] questionAndAnswer = new String[2];
         int randomNum1 = Utils.getRandomNumber();
         int randomNum2 = Utils.getRandomNumber();
         // переменная результата операций
@@ -30,10 +29,9 @@ public class Calc {
             System.exit(0);
         }
         // построение вопроса
-        String question = String.format("%d %c %d", randomNum1, operator, randomNum2);
-        questionAndAnswer[0] = question;  // question
-        questionAndAnswer[1] = String.valueOf(arithmeticResult);  // answer
-        return questionAndAnswer;
+        String question = String.format("%d %c %d", randomNum1, operator, randomNum2); // question
+        String answer = String.valueOf(arithmeticResult);  // answer
+        return new String[]{question, answer};
     }
     public static int makeArithmeticResult(char operator, int num1, int num2) throws Exception {
         String errorMessage = String.format("%c is a wrong operator in the round generator", operator);
