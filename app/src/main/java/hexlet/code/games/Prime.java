@@ -17,16 +17,17 @@ public class Prime {
     public static void generateRoundData(String[] rounds) {
         final int questionArr = 0;
         final int answerArr = 1;
+        final int endRandomBorder = 100;
         // рандомный операнд
         int defaultStartNumRandom = 2;
-        int randomNum = Utils.getRandomNumber(defaultStartNumRandom);
+        int randomNum = Utils.getRandomNumber(defaultStartNumRandom, endRandomBorder);
         // поиск prime number
-        String realPrimeNumber = findPrimeNum(randomNum);
+        String realPrimeNumber = isPrimeNum(randomNum) ? "yes" : "no";
         rounds[questionArr] = String.valueOf(randomNum);  // question
         rounds[answerArr] = realPrimeNumber;  // answer
     }
-    public static String findPrimeNum(int number) {
-        String result = "yes";
+    public static boolean isPrimeNum(int number) {
+        boolean result = true;
         final int primeChecker = 3;
         int counter = 0;
         for (int f = 1; f <= number; f++) {
@@ -34,7 +35,7 @@ public class Prime {
                 counter++;
             }
             if (counter >= primeChecker) {
-                result = "no";
+                result = false;
                 return result;
             }
         }

@@ -18,7 +18,11 @@ public class Even {
         final int questionArr = 0;
         final int answerArr = 1;
         int randomNum = Utils.getRandomNumber();
+        String resultEven = isEven(randomNum) ? "yes" : "no";
         rounds[questionArr] = String.valueOf(randomNum);  // question
-        rounds[answerArr] = randomNum % 2 == 0 ? "yes" : "no";  // answer
+        rounds[answerArr] = resultEven;  // answer
+    }
+    public static boolean isEven(int randomNum) {
+        return randomNum % 2 == 0;
     }
 }
