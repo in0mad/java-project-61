@@ -22,7 +22,7 @@ public class Progression {
         int[] sequence = getRandomSequence();
         textSequence = new StringBuilder();
         // определение позиции рандомного числа в последовательности
-        int randNumPos = Utils.getRandomNumber(2, sequence.length + 1);
+        int randNumPos = Utils.getRandomRangeNumber(2, sequence.length + 1);
         // построение последовательности
         for (int f = 0; f < sequence.length; f++) {
             if (f == randNumPos - 1) {
