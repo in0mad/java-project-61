@@ -45,9 +45,9 @@ public class Calc {
     public static char getRandomOperator() {
         // определение рандомного оператора
         Random rand = new Random();
-        int defaultOperatorStart = 0;
-        int defaultOperatorFinish = 3;
-        int operatorRandomizer = rand.nextInt(defaultOperatorStart, defaultOperatorFinish);
+        final int operatorStart = 0;
+        final int operatorFinish = 3;
+        int operatorRandomizer = rand.nextInt(operatorStart, operatorFinish);
         char[] symbols = {'-', '+', '*'};
         return symbols[operatorRandomizer];
     }

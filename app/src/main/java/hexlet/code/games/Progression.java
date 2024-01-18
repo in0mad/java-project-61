@@ -56,7 +56,7 @@ public class Progression {
         int sequenceLength = rand.nextInt(SEQ_LENGTH_START, SEQ_LENGTH_FINISH);
         // определение шага последовательности и стартового числа
         int stepStart = 2;
-        int stepFinish = 6;
+        final int stepFinish = 6;
         int randStep = rand.nextInt(stepStart, stepFinish);
         // определение стартового числа
         int startNum = Utils.getRandomNumber();

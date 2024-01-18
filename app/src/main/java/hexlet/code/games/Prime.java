@@ -15,7 +15,7 @@ public class Prime {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        int endRandomBorder = 100;
+        final int endRandomBorder = 100;
         // рандомный операнд
         int defaultStartNumRandom = 2;
         int randomNum = Utils.getRandomRangeNumber(defaultStartNumRandom, endRandomBorder);
@@ -26,7 +26,7 @@ public class Prime {
     }
     public static boolean isPrimeNum(int number) {
         boolean result = true;
-        int primeChecker = 3;
+        final int primeChecker = 3;
         int counter = 0;
         for (int f = 1; f <= number; f++) {
             if (number % f == 0) {
