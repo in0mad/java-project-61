@@ -25,30 +25,18 @@ public class Progression {
         int seqStep = Utils.getRandomNumber(stepStart, stepFinish);
         String[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
         // определение позиции рандомного числа в последовательности
-        int randNumIndex = Utils.getRandomNumber(2, sequence.length + 1);
+        int randNumIndex = Utils.getRandomNumber(2, sequence.length);
         int missedNum = Integer.parseInt(sequence[randNumIndex]); // пропущенное число
         // построение последовательности
         sequence[randNumIndex] = "..";
-//        StringBuilder textSequence;
-//        textSequence = new StringBuilder();
-//        for (int f = 0; f < sequence.length; f++) {
-//            if (f == randNumIndex - 1) {
-//                textSequence.append(" " + "..");
-//            } else {
-//                textSequence.append(" ").append(sequence[f]);
-//            }
-//        }
-//        String question = textSequence.toString().trim();  // question
         String question = String.join(" ", sequence);
         String answer = String.valueOf(missedNum);  // answer
         return new String[]{question, answer};
     }
     public static String[] getSequence(int start, int length, int step) {
-        //int[] sequenceArr = new int[length];
         String[] sequenceArr = new String[length];
         // построение последовательности
         for (int f = 0, j = start; f < sequenceArr.length; f++, j += step) {
-            //sequenceArr[f] = j;
             sequenceArr[f] = String.format("%d", j);
         }
         return sequenceArr;
