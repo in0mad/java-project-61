@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public class Progression {
     private static final int SEQ_LENGTH_START = 10;
     private static final int SEQ_LENGTH_FINISH = 16;
@@ -19,14 +17,15 @@ public class Progression {
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
     public static String[] generateRoundData() {
-        // получение последовательности
-        int[] sequenceRules = generateSequenceData();
-        int start = sequenceRules[0];
-        int length = sequenceRules[1];
-        int step = sequenceRules[2];
-        int[] sequence = getSequence(start, length, step);
+        // генерация вводных для последовательности
+        int seqStart = Utils.getRandomNumber();
+        int seqLength = Utils.getRandomNumber(SEQ_LENGTH_START, SEQ_LENGTH_FINISH);
+        int stepStart = 2;
+        final int stepFinish = 6;
+        int seqStep = Utils.getRandomNumber(stepStart, stepFinish);
+        int[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
         // определение позиции рандомного числа в последовательности
-        int randNumPos = Utils.getRandomRangeNumber(2, sequence.length + 1);
+        int randNumPos = Utils.getRandomNumber(2, sequence.length + 1);
         int missedNum = sequence[randNumPos - 1]; // пропущенное число
         // построение последовательности
         StringBuilder textSequence;
@@ -49,17 +48,5 @@ public class Progression {
             sequenceArr[f] = j;
         }
         return sequenceArr;
-    }
-    public static int[] generateSequenceData() {
-        // установка рандомной длины прогрессии
-        Random rand = new Random();
-        int sequenceLength = rand.nextInt(SEQ_LENGTH_START, SEQ_LENGTH_FINISH);
-        // определение шага последовательности и стартового числа
-        int stepStart = 2;
-        final int stepFinish = 6;
-        int randStep = rand.nextInt(stepStart, stepFinish);
-        // определение стартового числа
-        int startNum = Utils.getRandomNumber();
-        return new int[] {startNum, sequenceLength, randStep};
     }
 }

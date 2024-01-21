@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.Random;
-
 public class Calc {
     public static void startTheGame() {
         String ruleOfTheGame = "What is the result of the expression?.";
@@ -44,10 +42,9 @@ public class Calc {
     }
     public static char getRandomOperator() {
         // определение рандомного оператора
-        Random rand = new Random();
         final int operatorStart = 0;
         final int operatorFinish = 3;
-        int operatorRandomizer = rand.nextInt(operatorStart, operatorFinish);
+        int operatorRandomizer = Utils.getRandomNumber(operatorStart, operatorFinish);
         char[] symbols = {'-', '+', '*'};
         return symbols[operatorRandomizer];
     }
