@@ -23,29 +23,33 @@ public class Progression {
         int stepStart = 2;
         final int stepFinish = 6;
         int seqStep = Utils.getRandomNumber(stepStart, stepFinish);
-        int[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
+        String[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
         // определение позиции рандомного числа в последовательности
-        int randNumPos = Utils.getRandomNumber(2, sequence.length + 1);
-        int missedNum = sequence[randNumPos - 1]; // пропущенное число
+        int randNumIndex = Utils.getRandomNumber(2, sequence.length + 1);
+        int missedNum = Integer.parseInt(sequence[randNumIndex]); // пропущенное число
         // построение последовательности
-        StringBuilder textSequence;
-        textSequence = new StringBuilder();
-        for (int f = 0; f < sequence.length; f++) {
-            if (f == randNumPos - 1) {
-                textSequence.append(" " + "..");
-            } else {
-                textSequence.append(" ").append(sequence[f]);
-            }
-        }
-        String question = textSequence.toString().trim();  // question
+        sequence[randNumIndex] = "..";
+//        StringBuilder textSequence;
+//        textSequence = new StringBuilder();
+//        for (int f = 0; f < sequence.length; f++) {
+//            if (f == randNumIndex - 1) {
+//                textSequence.append(" " + "..");
+//            } else {
+//                textSequence.append(" ").append(sequence[f]);
+//            }
+//        }
+//        String question = textSequence.toString().trim();  // question
+        String question = String.join(" ", sequence);
         String answer = String.valueOf(missedNum);  // answer
         return new String[]{question, answer};
     }
-    public static int[] getSequence(int start, int length, int step) {
-        int[] sequenceArr = new int[length];
+    public static String[] getSequence(int start, int length, int step) {
+        //int[] sequenceArr = new int[length];
+        String[] sequenceArr = new String[length];
         // построение последовательности
         for (int f = 0, j = start; f < sequenceArr.length; f++, j += step) {
-            sequenceArr[f] = j;
+            //sequenceArr[f] = j;
+            sequenceArr[f] = String.format("%d", j);
         }
         return sequenceArr;
     }
