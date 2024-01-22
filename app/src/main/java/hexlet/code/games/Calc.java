@@ -19,25 +19,18 @@ public class Calc {
         int randomNum2 = Utils.getRandomNumber();
         // переменная результата операций
         char operator = getRandomOperator();
-        int arithmeticResult = 0;
-        try {
-            arithmeticResult = makeArithmeticResult(operator, randomNum1, randomNum2);
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-            System.exit(0);
-        }
-        // построение вопроса
+        int arithmeticResult = makeArithmeticResult(operator, randomNum1, randomNum2);
         String question = String.format("%d %c %d", randomNum1, operator, randomNum2); // question
         String answer = String.valueOf(arithmeticResult);  // answer
         return new String[]{question, answer};
     }
-    public static int makeArithmeticResult(char operator, int num1, int num2) throws Exception {
-        String errorMessage = String.format("%c is a wrong operator in the round generator", operator);
+    public static int makeArithmeticResult(char operator, int num1, int num2) {
+        String errorMessage = String.format("'%c' is a wrong operator in the round generator", operator);
         return switch (operator) {
             case '-' -> num1 - num2;
             case '+' -> num1 + num2;
             case '*' -> num1 * num2;
-            default -> throw new Exception(errorMessage);
+            default -> throw new RuntimeException(errorMessage);
         };
     }
     public static char getRandomOperator() {
