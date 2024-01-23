@@ -22,8 +22,8 @@ public class Progression {
         int seqStart = Utils.getRandomNumber();
         int seqLength = Utils.getRandomNumber(SEQ_LENGTH_START, SEQ_LENGTH_FINISH);
 //        int stepStart = 2;
-//        final int stepFinish = 6;
-        int seqStep = Utils.getRandomNumber(2, 6);
+        int stepFinish = 6;
+        int seqStep = Utils.getRandomNumber(2, stepFinish);
         String[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
         // определение позиции рандомного числа в последовательности
         int randNumIndex = Utils.getRandomNumber(2, sequence.length);
