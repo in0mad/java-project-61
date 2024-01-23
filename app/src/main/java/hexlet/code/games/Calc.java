@@ -39,8 +39,7 @@ public class Calc {
 
     public static char getRandomOperator() {
         // определение рандомного оператора
-        final int operatorStart = 0;
-        int operatorRandomizer = Utils.getRandomNumber(operatorStart, SYMBOLS.length);
+        int operatorRandomizer = Utils.getRandomNumber(0, SYMBOLS.length);
         return SYMBOLS[operatorRandomizer];
     }
 }

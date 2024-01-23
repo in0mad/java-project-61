@@ -18,8 +18,7 @@ public class Prime {
     public static String[] generateRoundData() {
         final int endRandomBorder = 100;
         // рандомный операнд
-        int defaultStartNumRandom = 2;
-        int randomNum = Utils.getRandomNumber(defaultStartNumRandom, endRandomBorder);
+        int randomNum = Utils.getRandomNumber(2, endRandomBorder);
         // поиск prime number
         String question = String.valueOf(randomNum);  // question
         String answer = isPrimeNum(randomNum) ? "yes" : "no";  // answer
