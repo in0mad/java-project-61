@@ -16,13 +16,14 @@ public class Progression {
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
+
     public static String[] generateRoundData() {
         // генерация вводных для последовательности
         int seqStart = Utils.getRandomNumber();
         int seqLength = Utils.getRandomNumber(SEQ_LENGTH_START, SEQ_LENGTH_FINISH);
-        int stepStart = 2;
-        final int stepFinish = 6;
-        int seqStep = Utils.getRandomNumber(stepStart, stepFinish);
+//        int stepStart = 2;
+//        final int stepFinish = 6;
+        int seqStep = Utils.getRandomNumber(2, 6);
         String[] sequence = getSequence(seqStart, seqLength, seqStep); // построение последовательности
         // определение позиции рандомного числа в последовательности
         int randNumIndex = Utils.getRandomNumber(2, sequence.length);
@@ -33,6 +34,7 @@ public class Progression {
         String answer = String.valueOf(missedNum);  // answer
         return new String[]{question, answer};
     }
+
     public static String[] getSequence(int start, int length, int step) {
         String[] sequenceArr = new String[length];
         // построение последовательности

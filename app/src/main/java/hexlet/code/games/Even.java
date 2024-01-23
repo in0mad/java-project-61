@@ -14,6 +14,7 @@ public class Even {
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
+
     public static String[] generateRoundData() {
         int randomNum = Utils.getRandomNumber();
         String question = String.valueOf(randomNum);

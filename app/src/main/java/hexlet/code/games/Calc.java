@@ -4,6 +4,7 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class Calc {
+    private static final char[] SYMBOLS = {'-', '+', '*'};
     public static void startTheGame() {
         String ruleOfTheGame = "What is the result of the expression?.";
         // построение вопросов
@@ -14,6 +15,7 @@ public class Calc {
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
+
     public static String[] generateRoundData() {
         int randomNum1 = Utils.getRandomNumber();
         int randomNum2 = Utils.getRandomNumber();
@@ -24,6 +26,7 @@ public class Calc {
         String answer = String.valueOf(arithmeticResult);  // answer
         return new String[]{question, answer};
     }
+
     public static int makeArithmeticResult(char operator, int num1, int num2) {
         String errorMessage = String.format("'%c' is a wrong operator in the round generator", operator);
         return switch (operator) {
@@ -33,12 +36,11 @@ public class Calc {
             default -> throw new RuntimeException(errorMessage);
         };
     }
+
     public static char getRandomOperator() {
         // определение рандомного оператора
         final int operatorStart = 0;
-        final int operatorFinish = 3;
-        int operatorRandomizer = Utils.getRandomNumber(operatorStart, operatorFinish);
-        char[] symbols = {'-', '+', '*'};
-        return symbols[operatorRandomizer];
+        int operatorRandomizer = Utils.getRandomNumber(operatorStart, SYMBOLS.length);
+        return SYMBOLS[operatorRandomizer];
     }
 }

@@ -14,6 +14,7 @@ public class Gcd {
         }
         Engine.launchTheGame(ruleOfTheGame, questionsAnswers);
     }
+
     public static String[] generateRoundData() {
         // рандомные операнды
         int randomNum1 = Utils.getRandomNumber();
@@ -24,6 +25,7 @@ public class Gcd {
         String answer = String.valueOf(denominator);  // answer
         return new String[]{question, answer};
     }
+
     public static int findGCD(int num1, int num2) {
         int denominator = 0;
         int minFigure = Math.min(num1, num2);
